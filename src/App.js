@@ -5,7 +5,7 @@ import { appState } from './redux/app'
 import { userState } from './redux/user'
 //components
 import Dialog from './components/Dialog'
-import { Route, SignOut } from './Styled' // import here for parcel HMR (when commented HMR fails)
+// import { Route, SignOut } from './Styled' // import here for parcel HMR (when commented HMR fails)
 //image and style
 //routes
 const Home = lazy(() => import('./routes/Home'))
