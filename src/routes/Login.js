@@ -4,16 +4,12 @@ import { navigate } from '@reach/router'
 
 import { mount, login } from '../redux/user'
 
-import { Route } from '../Styled'
+import { Route } from '../theme/Styled'
 import { Heading, Button, Input, Stack } from "@chakra-ui/core"
 
 export default function Login(props) {
 
 	const { userState } = props
-	
-	if (userState.isLoggedIn) {
-        navigate(`/`)
-	}
 
 	const [name, setName] = useState('')
 

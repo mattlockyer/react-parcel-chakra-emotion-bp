@@ -10,7 +10,7 @@
     "@emotion/styled": "^10.0.27",
     "@reach/router": "^1.3.1",
     "emotion-theming": "^10.0.27",
-    "parcel": "^2.0.0-nightly.291",
+    "parcel": "^2.0.0-nightly.293",
     "react": "^16.13.1",
     "react-dom": "^16.12.0",
     "react-icons": "^3.10.0",

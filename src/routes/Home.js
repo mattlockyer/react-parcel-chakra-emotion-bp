@@ -4,10 +4,9 @@ import { navigate } from '@reach/router'
 
 import { setDialog } from '../redux/app'
 import { logout } from '../redux/user'
-import { Route, SignOut } from '../Styled'
+import { Route, SignOut } from '../theme/Styled'
 import { Heading, Button, ButtonGroup, Input, Stack } from "@chakra-ui/core"
 import { FaBeer } from 'react-icons/fa/index'
-
 
 export default function Home(props) {
 

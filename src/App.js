@@ -1,16 +1,15 @@
-import React, { Suspense, lazy } from 'react'
-import { connect } from 'react-redux'
+import React, { useEffect, Suspense, lazy } from 'react'
+import { connect, useDispatch } from 'react-redux'
 import { Router, navigate } from "@reach/router"
-import { appState } from './redux/app'
+import { appState, setLoading } from './redux/app'
 import { userState } from './redux/user'
 //components
 import Dialog from './components/Dialog'
-// import { Route, SignOut } from './Styled' // import here for parcel HMR (when commented HMR fails)
 //image and style
+import Login from './routes/Login'
 //routes
 const Home = lazy(() => import('./routes/Home'))
 const About = lazy(() => import('./routes/About'))
-const Login = lazy(() => import('./routes/Login'))
 //loading component
 const Loading = () => <div>Loading</div>
 //bring in both states here
@@ -27,22 +26,22 @@ export default connect(
 		userState: { isLoggedIn }
 	} = props
 
-	if (window.location.pathname.indexOf('login') === -1 && !isLoggedIn) {
-		navigate('/login')
-	}
-
 	return (
-		<div>
+		<>
 			{ loading && <Loading />}
 			<Dialog {...dialog} />
-			
-			<Suspense fallback={<Loading />}>
-				<Router>
-					<Home {...props} path="/" />
-					<About {...props} path="/about" />
-					<Login {...props} path="/login" />
-				</Router>
-			</Suspense>
-		</div>
+			{
+				isLoggedIn ?
+				<Suspense fallback={<Loading />}>
+					<Router>
+						<Home {...props} path="/" />
+						<About {...props} path="/about" />
+						<Login {...props} path="/login" />
+					</Router>
+				</Suspense>
+				:
+				<Login {...props} path="/login" />
+			}
+		</>
 	)
 })

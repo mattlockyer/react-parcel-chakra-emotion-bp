@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from '@emotion/styled'
 
 export const Route = styled.div`
@@ -13,3 +12,7 @@ export const SignOut = styled.div`
     background: white;
     padding: 16px;
 `
+
+
+
+
